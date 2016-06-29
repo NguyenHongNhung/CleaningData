@@ -2,93 +2,54 @@
 
 subject - The ID of the test subject
 activity - The type of activity performed when the corresponding measurements were taken
+  * Activity Labels
+*WALKING: subject was walking during the test
+*WALKING_UPSTAIRS: subject was walking up a staircase during the test
+*WALKING_DOWNSTAIRS: subject was walking down a staircase during the test
+*SITTING: subject was sitting during the test
+*STANDING: subject was standing during the test
+*LAYING: subject was laying down during the test
 
-#####Activity Labels
-WALKING: subject was walking during the test
-WALKING_UPSTAIRS: subject was walking up a staircase during the test
-WALKING_DOWNSTAIRS: subject was walking down a staircase during the test
-SITTING: subject was sitting during the test
-STANDING: subject was standing during the test
-LAYING: subject was laying down during the test
+#Component of measurement variables' names:
+t or f: Time or Frequency : Type of measurement
+Body or Gravity : Force causing signal
+Acc or Gyro (Accelerometer or Gyroscope): Instrument makeing measurement
+Jerk, Mag: Jerk signal or Magnitude Signals.
+mean or std (Mean or StandardDeviation): The value reported is the average or standard deviation
+X , Y or Z : Direction of force being measured
 
-#Measurements
+#Specifically, there are 66 measurement variables:
 
-tBodyAccMeanX
-tBodyAccMeanY
-tBodyAccMeanZ
-tBodyAccStdX
-tBodyAccStdY
-tBodyAccStdZ
-tGravityAccMeanX
-tGravityAccMeanY
-tGravityAccMeanZ
-tGravityAccStdX
-tGravityAccStdY
-tGravityAccStdZ
-tBodyAccJerkMeanX
-tBodyAccJerkMeanY
-tBodyAccJerkMeanZ
-tBodyAccJerkStdX
-tBodyAccJerkStdY
-tBodyAccJerkStdZ
-tBodyGyroMeanX
-tBodyGyroMeanY
-tBodyGyroMeanZ
-tBodyGyroStdX
-tBodyGyroStdY
-tBodyGyroStdZ
-tBodyGyroJerkMeanX
-tBodyGyroJerkMeanY
-tBodyGyroJerkMeanZ
-tBodyGyroJerkStdX
-tBodyGyroJerkStdY
-tBodyGyroJerkStdZ
-tBodyAccMagMean
-tBodyAccMagStd
-tGravityAccMagMean
-tGravityAccMagStd
-tBodyAccJerkMagMean
-tBodyAccJerkMagStd
-tBodyGyroMagMean
-tBodyGyroMagStd
-tBodyGyroJerkMagMean
-tBodyGyroJerkMagStd
-fBodyAccMeanX
-fBodyAccMeanY
-fBodyAccMeanZ
-fBodyAccStdX
-fBodyAccStdY
-fBodyAccStdZ
-fBodyAccMeanFreqX
-fBodyAccMeanFreqY
-fBodyAccMeanFreqZ
-fBodyAccJerkMeanX
-fBodyAccJerkMeanY
-fBodyAccJerkMeanZ
-fBodyAccJerkStdX
-fBodyAccJerkStdY
-fBodyAccJerkStdZ
-fBodyAccJerkMeanFreqX
-fBodyAccJerkMeanFreqY
-fBodyAccJerkMeanFreqZ
-fBodyGyroMeanX
-fBodyGyroMeanY
-fBodyGyroMeanZ
-fBodyGyroStdX
-fBodyGyroStdY
-fBodyGyroStdZ
-fBodyGyroMeanFreqX
-fBodyGyroMeanFreqY
-fBodyGyroMeanFreqZ
-fBodyAccMagMean
-fBodyAccMagStd
-fBodyAccMagMeanFreq
-fBodyBodyAccJerkMagMean
-fBodyBodyAccJerkMagStd
-fBodyBodyAccJerkMagMeanFreq
-fBodyBodyGyroMagMean
-fBodyBodyGyroMagStd
-fBodyBodyGyroMagMeanFreq
-fBodyBodyGyroJerkMagMean
-fBodyBodyGyroJerkMagStd
-fBodyBodyGyroJerkMagMeanFreq
+ [3] "tBodyAcc-std()-X"            "tBodyAcc-std()-Y"           
+ [5] "tBodyAcc-std()-Z"            "tGravityAcc-std()-X"        
+ [7] "tGravityAcc-std()-Y"         "tGravityAcc-std()-Z"        
+ [9] "tBodyAccJerk-std()-X"        "tBodyAccJerk-std()-Y"       
+[11] "tBodyAccJerk-std()-Z"        "tBodyGyro-std()-X"          
+[13] "tBodyGyro-std()-Y"           "tBodyGyro-std()-Z"          
+[15] "tBodyGyroJerk-std()-X"       "tBodyGyroJerk-std()-Y"      
+[17] "tBodyGyroJerk-std()-Z"       "tBodyAccMag-std()"          
+[19] "tGravityAccMag-std()"        "tBodyAccJerkMag-std()"      
+[21] "tBodyGyroMag-std()"          "tBodyGyroJerkMag-std()"     
+[23] "fBodyAcc-std()-X"            "fBodyAcc-std()-Y"           
+[25] "fBodyAcc-std()-Z"            "fBodyAccJerk-std()-X"       
+[27] "fBodyAccJerk-std()-Y"        "fBodyAccJerk-std()-Z"       
+[29] "fBodyGyro-std()-X"           "fBodyGyro-std()-Y"          
+[31] "fBodyGyro-std()-Z"           "fBodyAccMag-std()"          
+[33] "fBodyBodyAccJerkMag-std()"   "fBodyBodyGyroMag-std()"     
+[35] "fBodyBodyGyroJerkMag-std()"  "tBodyAcc-mean()-X"          
+[37] "tBodyAcc-mean()-Y"           "tBodyAcc-mean()-Z"          
+[39] "tGravityAcc-mean()-X"        "tGravityAcc-mean()-Y"       
+[41] "tGravityAcc-mean()-Z"        "tBodyAccJerk-mean()-X"      
+[43] "tBodyAccJerk-mean()-Y"       "tBodyAccJerk-mean()-Z"      
+[45] "tBodyGyro-mean()-X"          "tBodyGyro-mean()-Y"         
+[47] "tBodyGyro-mean()-Z"          "tBodyGyroJerk-mean()-X"     
+[49] "tBodyGyroJerk-mean()-Y"      "tBodyGyroJerk-mean()-Z"     
+[51] "tBodyAccMag-mean()"          "tGravityAccMag-mean()"      
+[53] "tBodyAccJerkMag-mean()"      "tBodyGyroMag-mean()"        
+[55] "tBodyGyroJerkMag-mean()"     "fBodyAcc-mean()-X"          
+[57] "fBodyAcc-mean()-Y"           "fBodyAcc-mean()-Z"          
+[59] "fBodyAccJerk-mean()-X"       "fBodyAccJerk-mean()-Y"      
+[61] "fBodyAccJerk-mean()-Z"       "fBodyGyro-mean()-X"         
+[63] "fBodyGyro-mean()-Y"          "fBodyGyro-mean()-Z"         
+[65] "fBodyAccMag-mean()"          "fBodyBodyAccJerkMag-mean()" 
+[67] "fBodyBodyGyroMag-mean()"     "fBodyBodyGyroJerkMag-mean()"
